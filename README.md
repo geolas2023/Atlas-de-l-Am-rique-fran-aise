@@ -6,6 +6,7 @@ Portail des atlas géohistoriques des francophones d'Amérique du Nord d'Olivier
 |---|---|---|
 | Les Canadiens français de l'Ouest | thématique (atlas carrefour) | https://geolas2023.github.io/Atlas-Les-Canadiens-Fran-ais-de-l-Ouest/ |
 | Atlas Aubry | personnage : François-Xavier Aubry (1824-1854) | https://geolas2023.github.io/Atlas-Aubry/ |
+| Atlas Iberville | personnage : Pierre Le Moyne d'Iberville (1661-1706) | https://geolas2023.github.io/Atlas-Iberville/ |
 | Atlas Provost | personnage : Étienne Provost (v. 1785-1850), en préparation | dossier provisoire dans l'atlas des Canadiens français |
 
 ## Fonctionnement

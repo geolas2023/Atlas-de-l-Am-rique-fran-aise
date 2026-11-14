@@ -17,7 +17,7 @@ async function charger() {
       const d = await fetch(a.url + a.donnees).then(r => r.json());
       a.points = d.features.filter(f => f.geometry && f.geometry.type === 'Point'
         && !(a.exclure_corpus || []).includes(f.properties.corpus));
-    } catch (e) { console.warn('Données indisponibles pour', a.id, e); }
+    } catch (e) { a.erreur = true; console.warn('Données indisponibles pour', a.id, e); }
   }));
   rendreCartes(atlas);
   rendreCarte(atlas);
@@ -38,7 +38,7 @@ function rendreCartes(atlas) {
         <h3><a href="${esc(lienAtlas(a))}">${esc(T(a.titre))}</a>${prep ? `<span class="badge prep">${T({ fr: 'en préparation', en: 'in preparation' })}</span>` : ''}</h3>
         <p class="sous">${esc(T(a.sous_titre))}</p>
         <p>${esc(T(a.description))}</p>
-        <p class="meta">${n}${esc(a.periode || '')}</p>
+        <p class="meta">${n}${esc(a.periode || '')}${a.erreur ? ' · ' + T({ fr: 'carte de cet atlas momentanément indisponible', en: 'this atlas map is temporarily unavailable' }) : ''}</p>
         ${pages ? `<p class="pages">${pages}</p>` : ''}
         <a class="ouvrir" href="${esc(lienAtlas(a))}">${prep ? T({ fr: 'Voir le dossier →', en: 'See the file →' }) : T({ fr: "Ouvrir l'atlas →", en: 'Open the atlas →' })}</a>
       </article>`;
